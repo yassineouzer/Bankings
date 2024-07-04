@@ -13,18 +13,23 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 
 @Entity
 @Table(name = "users")
+@Builder
 public class User  extends AbstractEntity{
 
 	
     @Getter   @Setter
 	private String firstname;
+    
+    @Getter   @Setter
+    private String lastname;
+    
     
     @Getter @Setter
 	private String email;
@@ -46,12 +51,15 @@ public class User  extends AbstractEntity{
 	private List<Contact> contacts;
 
 	@OneToOne
+	 @Getter   @Setter
 	private Account account;
 
 	@OneToOne
+	 @Getter   @Setter
 	private Adress adresse;
 
 	@OneToOne
+	 @Getter   @Setter
 	private Role role;
 
 	public boolean isActive() {
@@ -61,4 +69,5 @@ public class User  extends AbstractEntity{
 	public void setActive(boolean active) {
 		this.active = active;
 	}
+
 }

@@ -25,10 +25,10 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 	  
 	  // rechercher user avec un iban specifique
 	  
-	  User findByAllAccountIban(String  iban);
+	  User findAllByAccountIban(String  iban);
 	  
-	  @Query("from User where firstname = :firstname") List<User>
-	  searchFirstname(String firstname);
+	  @Query("from User where firstname = :firstname") 
+	  List<User> searchFirstname(String firstname);
 	  
 	  
 	  // en tenant en compte majuscule et en recherchant les utulisateurs qui  contient firstname commme par exemple les noms qui contient abd
@@ -37,7 +37,7 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 	  @Query("from User where firstname ='%:firstname%'") 
 	  List<User> searchFirstnameContaining(String firstname);
 	  
-	  @Query("from User u inner join  Account a on u.id = a.user.id where a.iban =:iban ") 
+	  @Query(value="select * from users u inner join  accounts a on u.id = a.id_user and a.iban =:iban ",nativeQuery=true)
 	     User serachAccountIban(String iban);
 }
 

@@ -10,11 +10,12 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 
-
+@Builder
 @Entity
 @Table(name="transactions")
 public class Transaction extends AbstractEntity{
@@ -38,7 +39,7 @@ public class Transaction extends AbstractEntity{
 	private LocalDateTime  lastUpdated;
     
     
-
+    @Getter   @Setter
 	  @ManyToOne
 	  @JoinColumn(name="id_user") 
 	  private User user;

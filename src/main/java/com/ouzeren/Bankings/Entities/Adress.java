@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,6 +12,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name="adresses")
+@Builder
 public class Adress extends AbstractEntity{
 
 	
@@ -33,7 +35,7 @@ public class Adress extends AbstractEntity{
 	@Getter  @Setter
 	private String country;
 	
-	
+	@Getter  @Setter
 	@OneToOne
 	@JoinColumn(name="id_user")
 	private User user;

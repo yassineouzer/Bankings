@@ -14,6 +14,12 @@ import lombok.Setter;
 @Table(name="contacts")
 public class Contact extends AbstractEntity{
 
+	
+	@Getter @Setter
+	private Integer id;
+	
+	
+	
 	@Getter @Setter
 	private String firstname;
 	 

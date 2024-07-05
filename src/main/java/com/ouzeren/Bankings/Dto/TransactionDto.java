@@ -41,7 +41,7 @@ public class TransactionDto {
 	   }
 	   
 	   
-	   public static Transaction   toEntity(TransactionDto  transactiondto) {
+	   public static Transaction  toEntity(TransactionDto  transactiondto) {
 		   
 		   return Transaction.builder()
 			.amount( transactiondto.getAmount())

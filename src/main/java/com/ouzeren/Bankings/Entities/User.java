@@ -24,6 +24,11 @@ import lombok.Setter;
 public class User  extends AbstractEntity{
 
 	
+	
+	 @Getter   @Setter
+	private Integer id;
+	
+	
     @Getter   @Setter
 	private String firstname;
     

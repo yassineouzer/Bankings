@@ -17,6 +17,9 @@ public class Adress extends AbstractEntity{
 
 	
 	@Getter @Setter
+	private Integer id;
+	
+	@Getter @Setter
 	private String street;
 	
 	

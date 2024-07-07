@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ouzeren.Bankings.Dto.AdressDto;
@@ -26,7 +27,7 @@ public class AdressController {
 	
 	
 	@PostMapping("/")
-    public ResponseEntity<Integer> save(AdressDto dto){
+    public ResponseEntity<Integer> save(@RequestBody()AdressDto dto){
     	
     	return  new ResponseEntity<>(adress.save(dto),HttpStatus.CREATED);
     }

@@ -38,14 +38,14 @@ public class UserServiceImpl implements UserService {
 
 	public List<UserDto> findAll() {
         
-		
+		                                     // methode de reference
 		return repository.findAll().stream().map(UserDto::fromEntity).collect(Collectors.toList());
 	}
 
 	
 	public UserDto findById(Integer id) {
 	     return null;
-		/* return repository.findById(id).stream().map(UserDto::fromEntity))); */
+		/* return repository.findById(id).stream().map(w->UserDto.fromEntity(w))); */
 	}
 
 	@Override

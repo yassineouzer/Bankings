@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.ouzeren.Bankings.Dto.UserDto;
 import com.ouzeren.Bankings.Entities.User;
@@ -25,7 +27,7 @@ public class UserServiceImpl implements UserService {
 
 	
 	
-	
+	@PostMapping("/")
 	public Integer save(UserDto dto) {
 		
 		
@@ -35,14 +37,14 @@ public class UserServiceImpl implements UserService {
 		 
 	}
 
-
+    @GetMapping("")
 	public List<UserDto> findAll() {
         
 		                                     // methode de reference
 		return repository.findAll().stream().map(UserDto::fromEntity).collect(Collectors.toList());
 	}
 
-	
+	@GetMapping("")
 	public UserDto findById(Integer id) {
 	     return null;
 		/* return repository.findById(id).stream().map(w->UserDto.fromEntity(w))); */

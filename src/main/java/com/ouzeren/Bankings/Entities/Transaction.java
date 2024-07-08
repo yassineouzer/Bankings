@@ -22,6 +22,10 @@ public class Transaction extends AbstractEntity{
 
 	
  
+	 @Getter   @Setter
+	private Integer id;
+	
+	
    @Getter   @Setter
    private BigDecimal amount;
    

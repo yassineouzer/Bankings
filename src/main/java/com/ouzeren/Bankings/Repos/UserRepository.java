@@ -2,15 +2,17 @@ package com.ouzeren.Bankings.Repos;
 
 import java.util.List;
 
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import com.ouzeren.Bankings.Entities.User;
 
 public interface UserRepository extends JpaRepository<User, Integer>{
 
 	
-
+      UserDetails findByEmail(String email);
 	
 	  List<User> findAllByFirstname(String firstname);
 	  

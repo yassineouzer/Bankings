@@ -3,6 +3,8 @@ package com.ouzeren.Bankings.Entities;
 
 
 import java.time.LocalDateTime;
+
+
 import java.util.Collection;
 import java.util.List;
 
@@ -27,7 +29,7 @@ public  class User  extends AbstractEntity implements UserDetails{
 
 	
 	
-	 @Getter   @Setter
+    @Getter   @Setter
 	private Integer id;
 	
 	
@@ -76,12 +78,10 @@ public  class User  extends AbstractEntity implements UserDetails{
 	public void setActive(boolean active) {
 		this.active = active;
 	}
-
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	/*
+	 * @Override public Collection<? extends GrantedAuthority> getAuthorities() { //
+	 * TODO Auto-generated method stub return null; }
+	 */
 
 	@Override
 	public String getUsername() {
@@ -104,6 +104,12 @@ public boolean isAccountNonLocked() {
 public boolean isEnabled() {
 	
 	return true;
+}
+
+@Override
+public Collection<? extends GrantedAuthority> getAuthorities() {
+	// TODO Auto-generated method stub
+	return null;
 }
 
 }

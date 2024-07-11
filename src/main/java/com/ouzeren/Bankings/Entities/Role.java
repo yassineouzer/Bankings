@@ -15,6 +15,10 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Role extends AbstractEntity{
 
+	
+	
+	
+	
     @Getter @Setter
 	private String nom;
 
@@ -24,6 +28,11 @@ public class Role extends AbstractEntity{
 	@OneToOne
 	@JoinColumn(name = "id_user")
 	private User user;
+
+
+
+
+
 	
 	
 }

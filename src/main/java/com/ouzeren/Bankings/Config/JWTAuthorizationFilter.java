@@ -57,15 +57,11 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter{
         	authorities.add(new SimpleGrantedAuthority(u));
         });
         
-        UsernamePasswordAuthenticationToken user = UsernamePasswordAuthenticationToken(user,null,authorities);
+        UsernamePasswordAuthenticationToken user = new UsernamePasswordAuthenticationToken(username,null,authorities);
         	
 		
 	}
 
-	private UsernamePasswordAuthenticationToken UsernamePasswordAuthenticationToken(
-			UsernamePasswordAuthenticationToken user, Object object, Collection<GrantedAuthority> authorities) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }

@@ -41,7 +41,8 @@ public class SecurityConfig {
                 		
                 .anyRequest().authenticated())
                 
-               .addFilterBefore(new JWTAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+               .addFilterBefore(new JWTAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore( new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
              
 	      
 	     
